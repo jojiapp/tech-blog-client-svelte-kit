@@ -1,4 +1,5 @@
 import { browser, dev } from '$app/env';
+import { error } from '@sveltejs/kit';
 
 // we don't need any JS on this page, though we'll load
 // it in dev so that we get hot module replacement...
@@ -11,3 +12,11 @@ export const router = browser;
 // since there's no dynamic data here, we can prerender
 // it so that it gets served as a static asset in prod
 export const prerender = true;
+
+export function load() {
+	console.log('page');
+	return {
+		title: 'title',
+		content: 'content'
+	};
+}
