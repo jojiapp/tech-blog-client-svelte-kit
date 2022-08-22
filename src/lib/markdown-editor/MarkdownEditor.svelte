@@ -1,4 +1,4 @@
-<script lang="ts">
+<script lang='ts'>
 	import { onMount } from 'svelte';
 	import '@toast-ui/editor/dist/toastui-editor.css';
 	import '@toast-ui/editor/dist/theme/toastui-editor-dark.css';
@@ -15,7 +15,7 @@
 		const codeSyntaxHighlight = (
 			await import(
 				'@toast-ui/editor-plugin-code-syntax-highlight/dist/toastui-editor-plugin-code-syntax-highlight-all.js'
-			)
+				)
 		).default;
 
 		markdownEditor = new Editor({

@@ -3,7 +3,7 @@
 	import Nav from '$lib/header/Nav.svelte';
 </script>
 
-<header class="flex justify-between">
+<header class='flex justify-between'>
 	<Logo />
 	<Nav />
 </header>
