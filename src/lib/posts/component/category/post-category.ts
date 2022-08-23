@@ -1,10 +1,10 @@
 class PostCategory {
 	private readonly categories: string[];
-	private choice: number;
+	private choice: string;
 
 	constructor (categories: string[]) {
 		this.categories = categories;
-		this.choice = 0;
+		this.choice = categories[0];
 	}
 
 	public getCategories (): string[] {
@@ -12,11 +12,12 @@ class PostCategory {
 	}
 
 	public getChoice (): string {
-		return this.categories[this.choice];
+		return this.choice;
 	}
 
-	public setChoice (choice: number): void {
+	public setChoice (choice: string): PostCategory {
 		this.choice = choice;
+		return this;
 	}
 }
 
