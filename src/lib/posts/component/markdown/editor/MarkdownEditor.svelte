@@ -10,9 +10,11 @@
 
 	let markdownEditorEl;
 	let markdownEditor;
-	let markdown;
 
-	// todo: 저장 버튼 클릭 시, 마크다운 내용을 스토어에 넣어야하는데, 저장 누른걸 어떻게 감지하지
+	const handleImageUpload = (blob, callback) => {
+		console.log(blob);
+		callback('https://jojiapp.github.io/static/images/logo.png', 'logo.png');
+	};
 
 	onMount(async () => {
 		const Editor = (await import('@toast-ui/editor')).default;
@@ -32,6 +34,9 @@
 			plugins: [codeSyntaxHighlight],
 			events: {
 				change: (editorType) => $postMarkdown.setContent(markdownEditor.getMarkdown())
+			},
+			hooks: {
+				addImageBlobHook: handleImageUpload
 			}
 		});
 	});
