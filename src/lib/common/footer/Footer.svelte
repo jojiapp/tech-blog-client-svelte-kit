@@ -1,5 +1,5 @@
 <script lang="ts">
-	import authors from '$lib/data/authors.json';
+	import authors from '../data/authors.json';
 	import Fa from 'svelte-fa/src/fa.svelte';
 	import { faGithub } from '@fortawesome/free-brands-svg-icons';
 

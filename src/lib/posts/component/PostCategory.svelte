@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { postCategory, postMarkdown } from '../../store/post-create-stores';
+	import { postCategory, postMarkdown } from '../store/post-create-stores';
 
 	let isActive = false;
 	const handleCategoryClick = (category: string) => {

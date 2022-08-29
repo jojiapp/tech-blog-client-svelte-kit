@@ -1,7 +1,7 @@
 <script>
 	import '../app.css';
-	import Header from '$lib/header/Header.svelte';
-	import Footer from '$lib/footer/Footer.svelte';
+	import Header from '$lib/common/header/Header.svelte';
+	import Footer from '$lib/common/footer/Footer.svelte';
 </script>
 
 <div class="mx-auto max-w-5xl ">

@@ -1,9 +1,9 @@
 <script lang="ts">
 	import { postCategory, postMarkdown } from '$lib/posts/store/post-create-stores';
-	import MarkdownEditor from '../../../../lib/posts/component/markdown/editor/MarkdownEditor.svelte';
-	import Category from '$lib/posts/component/category/PostCategory.svelte';
-	import PostButton from '../../../../lib/posts/component/button/PostButton.svelte';
+	import MarkdownEditor from '../../../../lib/posts/component/markdown/MarkdownEditor.svelte';
+	import Category from '$lib/posts/component/PostCategory.svelte';
 	import Post from '$lib/posts/component/Post.svelte';
+	import SubmitButton from '../../../../lib/common/button/SimpleButton.svelte';
 
 	export let data;
 	postCategory.set(data.postCategory);
@@ -22,10 +22,7 @@
 {#if !isPreview}
 	<div class="mb-4 flex justify-between">
 		<Category />
-		<div class="flex items-center justify-center gap-2">
-			<PostButton handleOnClick={handlePreviewToggle} text="미리보기" />
-			<PostButton handleOnClick={handleSubmit} text="저장" />
-		</div>
+		<SubmitButton handleOnClick={handlePreviewToggle} text="미리보기" />
 	</div>
 
 	<MarkdownEditor />

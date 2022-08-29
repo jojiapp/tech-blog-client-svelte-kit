@@ -1,7 +1,11 @@
 import type { PageLoad } from '../../../../../.svelte-kit/types/src/routes/admin/posts/create/$types';
-import type { PostCreatePage } from '$lib/posts/type/post-page-types';
-import PostMarkdown from '../../../../lib/posts/component/markdown/post-markdown';
-import PostCategory from '../../../../lib/posts/component/category/post-category';
+import PostMarkdown from '../../../../lib/posts/dto/post-markdown';
+import PostCategory from '../../../../lib/posts/dto/post-category';
+
+export type PostCreatePage = {
+	postMarkdown: PostMarkdown;
+	postCategory: PostCategory;
+};
 
 export const load: PageLoad<PostCreatePage> = () => {
 	const categories = ['Java', 'Spring', 'Junit'];

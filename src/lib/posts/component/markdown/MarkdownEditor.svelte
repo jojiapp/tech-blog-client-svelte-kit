@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
-	import { postMarkdown } from '$lib/posts/store/post-create-stores';
+	import { postMarkdown } from '../../store/post-create-stores';
 
 	import '@toast-ui/editor/dist/toastui-editor.css';
 	import '@toast-ui/editor/dist/theme/toastui-editor-dark.css';
