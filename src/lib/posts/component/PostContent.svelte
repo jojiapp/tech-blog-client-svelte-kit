@@ -4,6 +4,6 @@
 	import { postMarkdown } from '$lib/posts/store/post-create-stores.js';
 </script>
 
-<div class="markdown-body bg-neutral-900 text-white">
+<div id="markdown-body-custom" class="markdown-body bg-neutral-900 text-white">
 	<MarkdownConvertor markdown={$postMarkdown.getContent()} />
 </div>

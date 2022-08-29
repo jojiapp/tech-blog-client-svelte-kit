@@ -1,7 +1,7 @@
 <script lang="ts">
 	import authors from '../data/authors.json';
 	import Fa from 'svelte-fa/src/fa.svelte';
-	import { faGithub } from '@fortawesome/free-brands-svg-icons';
+	import { faGithub } from '/node_modules/@fortawesome/free-brands-svg-icons';
 
 	const year = new Date().getFullYear();
 </script>

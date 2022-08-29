@@ -1,17 +1,15 @@
 import dayjs from 'dayjs';
 
 class PostMarkdown {
-	private title: string;
-	private content: string;
+	private markdown: string;
 	private category: string;
 	private readonly createdAt: Date;
 	private readonly updatedAt: Date;
 
 	private static readonly DATE_FORMAT = 'YYYY년 MM월 DD일';
 
-	constructor(title: string, content: string, category: string, createdAt: Date, updatedAt: Date) {
-		this.title = title;
-		this.content = content;
+	constructor(title: string, markdown: string, category: string, createdAt: Date, updatedAt: Date) {
+		this.markdown = markdown;
 		this.category = category;
 		this.createdAt = createdAt;
 		this.updatedAt = updatedAt;
@@ -21,25 +19,20 @@ class PostMarkdown {
 		return new PostMarkdown('', '', category, new Date(), new Date());
 	}
 
-	private extraTitle(content: string): string {
-		const title = content
+	public getTitle(): string {
+		const title = this.markdown
 			.match(/^#\s.*\n/gi)
 			?.join('')
 			.replace('# ', '');
 		return title ? title : '';
 	}
 
-	public getTitle(): string {
-		return this.title;
-	}
-
 	public getContent(): string {
-		return this.content;
+		return this.markdown.replace(`# ${this.getTitle()}`, '');
 	}
 
-	public setContent(content: string): PostMarkdown {
-		this.title = this.extraTitle(content);
-		this.content = content;
+	public setMarkdown(markdown: string): PostMarkdown {
+		this.markdown = markdown;
 		return this;
 	}
 

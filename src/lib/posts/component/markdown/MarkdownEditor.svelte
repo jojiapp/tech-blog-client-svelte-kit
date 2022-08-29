@@ -33,7 +33,7 @@
 			theme: 'dark',
 			plugins: [codeSyntaxHighlight],
 			events: {
-				change: (editorType) => $postMarkdown.setContent(markdownEditor.getMarkdown())
+				change: (editorType) => $postMarkdown.setMarkdown(markdownEditor.getMarkdown())
 			},
 			hooks: {
 				addImageBlobHook: handleImageUpload

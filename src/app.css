@@ -6,3 +6,7 @@
   box-sizing: border-box;
   word-break: keep-all;
 }
+
+#markdown-body-custom h2 {
+  @apply text-9xl
+}
