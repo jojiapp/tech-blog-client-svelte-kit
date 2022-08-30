@@ -12,13 +12,13 @@
 </script>
 
 <div class="relative z-10 w-48">
-	<div class="rounded border-2 border-neutral-800 p-2" on:click={handleIsActiveToggle}>
+	<div class="rounded border-2 border-gray-800 p-2" on:click={handleIsActiveToggle}>
 		<div class="flex cursor-pointer items-center">
 			{$postCategory.getChoice()}
 		</div>
 	</div>
 	<div
-		class="absolute top-14 w-48 rounded border-2 border-neutral-800 bg-neutral-900 py-3 px-2"
+		class="absolute top-14 w-48 rounded border-2 border-gray-800 bg-gray-900 py-3 px-2"
 		class:hidden={!isActive}
 	>
 		{#each $postCategory.getCategories() as category, index}
