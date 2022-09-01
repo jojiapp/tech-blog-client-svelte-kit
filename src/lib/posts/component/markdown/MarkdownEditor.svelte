@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
-	import { postMarkdown } from '../../store/post-create-stores';
+	import { postCreateMarkdown } from '../../store/post-stores';
 
 	import '@toast-ui/editor/dist/toastui-editor.css';
 	import '@toast-ui/editor/dist/theme/toastui-editor-dark.css';
@@ -26,14 +26,14 @@
 
 		markdownEditor = new Editor({
 			el: markdownEditorEl,
-			initialValue: $postMarkdown.getContent(),
+			initialValue: $postCreateMarkdown.getContent(),
 			height: '80vh',
 			initialEditType: 'markdown',
 			previewStyle: 'tab',
 			theme: 'dark',
 			plugins: [codeSyntaxHighlight],
 			events: {
-				change: (editorType) => $postMarkdown.setMarkdown(markdownEditor.getMarkdown())
+				change: (editorType) => $postCreateMarkdown.setMarkdown(markdownEditor.getMarkdown())
 			},
 			hooks: {
 				addImageBlobHook: handleImageUpload
