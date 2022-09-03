@@ -7,14 +7,6 @@
 
 	export let markdown;
 
-	function getLanguageHighlight(code: string, lang: string) {
-		return prism.highlight(code, prism.languages[lang], lang);
-	}
-
-	function getDefaultLanguageHighlight(code: string) {
-		return prism.highlight(code, prism.languages.log, 'log');
-	}
-
 	marked.setOptions({
 		langPrefix: 'language-',
 		highlight: function (code, lang) {
@@ -26,6 +18,14 @@
 		},
 		gfm: true
 	});
+
+	function getLanguageHighlight(code: string, lang: string) {
+		return prism.highlight(code, prism.languages[lang], lang);
+	}
+
+	function getDefaultLanguageHighlight(code: string) {
+		return prism.highlight(code, prism.languages.log, 'log');
+	}
 
 	let html = marked.parse(markdown);
 </script>

@@ -3,6 +3,6 @@
 	import { post } from '$lib/posts/store/post-stores.js';
 </script>
 
-<div class="prose max-w-none">
+<article class="prose max-w-none">
 	<MarkdownConvertor markdown={$post.getContent()} />
-</div>
+</article>
