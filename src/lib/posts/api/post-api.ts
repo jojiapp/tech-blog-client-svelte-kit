@@ -1,10 +1,16 @@
-import type PostCreateMarkdown from '../dto/post-create-markdown';
+import type PostMarkdown from '../dto/post-markdown';
 
 class PostAPI {
-	createPost = async (postMarkdown: PostCreateMarkdown) => {
+	createPost = async (postMarkdown: PostMarkdown) => {
 		console.log('저장');
 		// todo: 게시글 등록
-		return 1;
+		return '1';
+	};
+
+	updatePost = async (postMarkdown: PostMarkdown) => {
+		console.log('수정');
+		// todo 게시글 수정
+		return '1';
 	};
 
 	saveImage = async (file: File) => {

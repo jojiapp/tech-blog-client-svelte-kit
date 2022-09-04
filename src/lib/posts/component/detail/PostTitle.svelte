@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { post } from '$lib/posts/store/post-stores.js';
+	import { post } from '../../store/post-stores.js';
 </script>
 
 <div class="mb-12 flex flex-col items-center justify-center border-b-2 border-gray-800 pb-12">
@@ -9,7 +9,10 @@
 	>
 		[{$post.getCategory()}] {$post.getTitle()}
 	</h1>
-	<div class="flex text-gray-400">
-		<div>{$post.getUpdatedAt()}</div>
+	<div class="flex gap-4 text-sm text-gray-400 ">
+		<div>등록일: {$post.getCreatedAt()}</div>
+		{#if !$post.isSameDate()}
+			<div>수정일: {$post.getUpdatedAt()}</div>
+		{/if}
 	</div>
 </div>

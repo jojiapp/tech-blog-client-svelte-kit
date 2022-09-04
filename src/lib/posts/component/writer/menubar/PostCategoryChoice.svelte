@@ -1,10 +1,10 @@
 <script lang="ts">
-	import { postCategoryChoice, postCreateMarkdown } from '../../store/post-stores';
+	import { postCategoryChoice, postMarkdown } from '../../../store/post-stores';
 
 	let isActive = false;
 	const handleCategoryClick = (category: string) => {
 		$postCategoryChoice = $postCategoryChoice.setChoice(category);
-		$postCreateMarkdown = $postCreateMarkdown.setCategory(category);
+		$postMarkdown = $postMarkdown.setCategory(category);
 		handleIsActiveToggle();
 	};
 

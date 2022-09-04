@@ -34,6 +34,10 @@ class Post {
 	public getUpdatedAt(): string {
 		return DateFormatter.getKO_YYYY_MM_DD(this.createdAt);
 	}
+
+	public isSameDate(): boolean {
+		return this.getCreatedAt() === this.getUpdatedAt();
+	}
 }
 
 export default Post;

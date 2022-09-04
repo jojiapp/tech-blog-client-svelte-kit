@@ -1,12 +1,12 @@
 <script lang="ts">
-	import PostCategoryChoice from '$lib/posts/component/menubar/PostCategoryChoice.svelte';
-	import SubmitButton from '$lib/common/component/button/SimpleButton.svelte';
-	import { postCreateMarkdown } from '$lib/posts/store/post-stores.js';
+	import PostCategoryChoice from './PostCategoryChoice.svelte';
+	import SubmitButton from '../../../../common/component/button/SimpleButton.svelte';
+	import { postMarkdown } from '../../../store/post-stores.js';
 
 	export let handlePreview;
 
 	const handleCreatedAtOnChange = (date: string) => {
-		$postCreateMarkdown.setCreatedAt(date);
+		$postMarkdown.setCreatedAt(date);
 	};
 </script>
 
@@ -17,7 +17,7 @@
 			type="text"
 			class="w-60"
 			placeholder="등록일: yyyy-MM-dd HH:mm"
-			value={$postCreateMarkdown.getCreatedAt()}
+			value={$postMarkdown.getCreatedAt()}
 			on:change={(e) => handleCreatedAtOnChange(e.currentTarget.value)}
 		/>
 		<SubmitButton handleOnClick={handlePreview} text="미리보기" />
