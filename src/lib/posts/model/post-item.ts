@@ -37,7 +37,7 @@ class PostItem {
 	}
 
 	public getCategory(): string {
-		return this.category;
+		return '#' + this.category;
 	}
 
 	public getThumbnailUrl(): string {
