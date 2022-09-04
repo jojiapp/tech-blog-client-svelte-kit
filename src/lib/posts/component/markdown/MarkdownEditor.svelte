@@ -7,13 +7,14 @@
 
 	import 'prismjs/themes/prism.css';
 	import '@toast-ui/editor-plugin-code-syntax-highlight/dist/toastui-editor-plugin-code-syntax-highlight.css';
+	import postAPI from '../../api/post-api';
 
 	let markdownEditorEl;
 	let markdownEditor;
 
-	const handleImageUpload = (blob, callback) => {
-		console.log(blob);
-		callback('https://jojiapp.github.io/static/images/logo.png', 'logo.png');
+	const handleImageUpload = async (blob, callback) => {
+		const fileUrl = await postAPI.saveImage(blob);
+		callback(fileUrl);
 	};
 
 	onMount(async () => {

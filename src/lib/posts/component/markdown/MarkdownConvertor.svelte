@@ -1,11 +1,23 @@
 <script lang="ts">
 	import { marked } from 'marked';
 	import prism from 'prismjs';
-	import 'prismjs/themes/prism-dark.css';
-	import '$lib/global/css/prism';
-	import '$lib/global/css/prism.css';
 
 	export let markdown;
+
+	const renderer = {
+		// link(href: string, title: string, text: string) {
+		// 	return '';
+		// }
+		image(href: string, title: string, text: string) {
+			return `
+				<div class='post-img-container'>
+					<img src=${href} alt=${text} />
+				</div>
+			`;
+		}
+	};
+
+	marked.use({ renderer });
 
 	marked.setOptions({
 		langPrefix: 'language-',
