@@ -28,11 +28,11 @@ class Post {
 	}
 
 	public getCreatedAt(): string {
-		return DateFormatter.getKOYYYYMMDD(this.createdAt);
+		return DateFormatter.getKO_YYYY_MM_DD(this.createdAt);
 	}
 
 	public getUpdatedAt(): string {
-		return DateFormatter.getKOYYYYMMDD(this.createdAt);
+		return DateFormatter.getKO_YYYY_MM_DD(this.createdAt);
 	}
 }
 

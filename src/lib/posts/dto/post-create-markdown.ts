@@ -1,16 +1,29 @@
 import Post from '../model/post';
+import DateFormatter from '../../common/formatter/DateFormatter';
 
 class PostCreateMarkdown {
 	private markdown: string;
 	private category: string;
+	private createdAt: Date;
 
-	constructor(markdown: string, category: string) {
+	private constructor(markdown: string, category: string, createdAt: Date) {
 		this.markdown = markdown;
 		this.category = category;
+		this.createdAt = createdAt;
 	}
 
-	public static init(category: string) {
-		return new PostCreateMarkdown('', category);
+	public static from(category: string) {
+		return new PostCreateMarkdown('', category, new Date());
+	}
+
+	public toPostMarkdown(): Post {
+		return new Post(
+			this.getTitle(),
+			this.getContent(),
+			this.getCategory(),
+			this.createdAt,
+			new Date()
+		);
 	}
 
 	public getTitle(): string {
@@ -43,8 +56,13 @@ class PostCreateMarkdown {
 		return this;
 	}
 
-	public toPostMarkdown(): Post {
-		return new Post(this.getTitle(), this.getContent(), this.getCategory(), new Date(), new Date());
+	public getCreatedAt(): string {
+		return DateFormatter.getYYYY_MM_DD(this.createdAt);
+	}
+
+	public setCreatedAt(createdAt: Date): PostCreateMarkdown {
+		this.createdAt = createdAt;
+		return this;
 	}
 }
 

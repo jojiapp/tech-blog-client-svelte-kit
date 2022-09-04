@@ -11,7 +11,7 @@ export type PostCreatePage = {
 export const load: PageLoad<PostCreatePage> = async () => {
 	const categories = await categoryAPI.getCategories();
 	return {
-		postMarkdown: PostCreateMarkdown.init(categories[0]),
+		postMarkdown: PostCreateMarkdown.from(categories[0]),
 		postCategory: new PostCategory(categories)
 	};
 };

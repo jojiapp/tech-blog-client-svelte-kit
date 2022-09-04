@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { postCategoryChoice, postCreateMarkdown } from '../store/post-stores';
+	import { postCategoryChoice, postCreateMarkdown } from '../../store/post-stores';
 
 	let isActive = false;
 	const handleCategoryClick = (category: string) => {
