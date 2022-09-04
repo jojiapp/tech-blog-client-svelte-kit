@@ -6,7 +6,7 @@
 	const year = new Date().getFullYear();
 </script>
 
-<div class="mt-16">
+<div class="border-t-2 border-gray-800 pt-16">
 	<div class="mb-4 flex items-center justify-center gap-2 text-gray-400">
 		<a href={authors.github} target="_blank" class="text-white">
 			<Fa icon={faGithub} size="1.5rem" />
