@@ -1,0 +1,1 @@
+import{c as o,P as t,C as a}from"./category-api-dd3abf4f.js";const r=async()=>{const e=await o.getCategories();return{postMarkdown:t.init(e[0]),categoryChoice:new a(e)}},c=Object.freeze(Object.defineProperty({__proto__:null,load:r},Symbol.toStringTag,{value:"Module"}));export{c as _,r as l};
