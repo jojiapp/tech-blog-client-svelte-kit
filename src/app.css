@@ -6,3 +6,7 @@
   box-sizing: border-box;
   word-break: keep-all;
 }
+
+input {
+  @apply border-2 border-gray-700 bg-transparent outline-none px-3 hover:border-primary-800 rounded;
+}

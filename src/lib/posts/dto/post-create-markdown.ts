@@ -57,11 +57,11 @@ class PostCreateMarkdown {
 	}
 
 	public getCreatedAt(): string {
-		return DateFormatter.getYYYY_MM_DD(this.createdAt);
+		return DateFormatter.getYYYY_MM_DD_HH_mm(this.createdAt);
 	}
 
-	public setCreatedAt(createdAt: Date): PostCreateMarkdown {
-		this.createdAt = createdAt;
+	public setCreatedAt(createdAt: string): PostCreateMarkdown {
+		this.createdAt = DateFormatter.toYYYY_MM_DD_HH_mm(createdAt);
 		return this;
 	}
 }

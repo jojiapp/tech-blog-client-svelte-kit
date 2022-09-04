@@ -1,9 +1,8 @@
 h1 {
-  text-align: center;
+  @apply text-center
 }
 
 img {
-  width: 50%;
-  object-fit: cover;
-  margin: auto;
+  @apply w-6/12 object-cover m-auto
 }
+
