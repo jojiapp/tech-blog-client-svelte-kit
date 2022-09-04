@@ -4,20 +4,13 @@
 
 	export let markdown;
 
-	const renderer = {
-		// link(href: string, title: string, text: string) {
-		// 	return '';
-		// }
-		image(href: string, title: string, text: string) {
-			return `
-				<div class='post-img-container'>
-					<img src=${href} alt=${text} />
-				</div>
-			`;
-		}
-	};
+	// const renderer = {
+	// link(href: string, title: string, text: string) {
+	// 	return '';
+	// }
+	// };
 
-	marked.use({ renderer });
+	// marked.use({ renderer });
 
 	marked.setOptions({
 		langPrefix: 'language-',

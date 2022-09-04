@@ -1,7 +1,5 @@
 img {
   width: 50%;
   object-fit: cover;
-}
-.post-img-container {
-  @apply flex justify-center items-center
+  margin: auto;
 }
