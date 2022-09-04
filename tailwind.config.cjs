@@ -6,6 +6,9 @@ module.exports = {
   content: ['./src/**/*.{html,js,svelte,ts}'],
   theme: {
     extend: {
+      flex: {
+        '8': '8 2 0%'
+      },
       colors: {
         primary: colors.pink,
         gray: colors.neutral,

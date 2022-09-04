@@ -1,9 +1,9 @@
 import { writable } from 'svelte/store';
-import type PostCategoryChoice from '../../category/dto/post-category';
+import type CategoryChoice from '../../category/dto/CategoryChoice';
 import type PostMarkdown from '../dto/post-markdown';
 import type Post from '../model/post';
 
-export const postCategoryChoice = writable<PostCategoryChoice>();
+export const categoryChoice = writable<CategoryChoice>();
 export const postMarkdown = writable<PostMarkdown>();
 
 export const post = writable<Post>();
