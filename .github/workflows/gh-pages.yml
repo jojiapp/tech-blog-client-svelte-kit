@@ -22,12 +22,12 @@ jobs:
         env:
           CI: true
           DEPLOY_TARGET: gh-pages
-      - run: touch docs/.nojekyll
+      - run: touch build/.nojekyll
 
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@3.7.1
         with:
           GITHUB_TOKEN: ${{ secrets.WORKFLOW }}
           BRANCH: gh-pages  # 배포될 브랜치
-          FOLDER: docs # 이 폴더에 있는 파일을 배포
+          FOLDER: build # 이 폴더에 있는 파일을 배포
           CLEAN: true # 배포 브랜치에 있는 파일들을 자동으로 삭제

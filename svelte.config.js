@@ -1,8 +1,6 @@
 import preprocess from 'svelte-preprocess';
 import adapter from '@sveltejs/adapter-static';
 
-const dev = 'production' === 'development';
-
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
 	// Consult https://github.com/sveltejs/svelte-preprocess
@@ -13,18 +11,17 @@ const config = {
 
 	kit: {
 		adapter: adapter({
-			pages: 'docs',
-			assets: 'docs',
-			fallback: '200.html'
-		}),
-		paths: {
-			// change below to your repo name
-			base: dev ? '' : '/tech-blog-client-svelte-kit'
-		},
-		// Override http methods in the Todo forms
-		methodOverride: {
-			allowed: ['PATCH', 'DELETE']
-		}
+			// default options are shown. On some platforms
+			// these options are set automatically — see below
+			pages: 'build',
+			assets: 'build',
+			fallback: 'index.html',
+			precompress: false
+		})
+	},
+	// Override http methods in the Todo forms
+	methodOverride: {
+		allowed: ['PATCH', 'DELETE']
 	}
 };
 

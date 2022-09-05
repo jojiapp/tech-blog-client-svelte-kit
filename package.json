@@ -2,7 +2,7 @@
   "name": "tech-blog-client-svelte-kit",
   "version": "0.0.1",
   "scripts": {
-    "clean": "rm -rf .svelte-kit && rm -rf docs",
+    "clean": "rm -rf docs",
     "dev": "vite dev",
     "prebuild": "npm run clean",
     "build": "vite build",
