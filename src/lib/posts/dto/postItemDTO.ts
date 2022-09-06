@@ -47,6 +47,10 @@ class PostItemDTO {
 	public getCreatedAt(): string {
 		return DateFormatter.getKO_YYYY_MM_DD(this.createdAt);
 	}
+
+	public getPostUrl(): string {
+		return `/blog/${this.getId()}`;
+	}
 }
 
 export default PostItemDTO;
