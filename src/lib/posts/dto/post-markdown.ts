@@ -32,8 +32,9 @@ class PostMarkdown {
 
 	public toPostMarkdown(): Post {
 		return new Post(
+			this.getId(),
 			this.getTitle(),
-			this.getContent(),
+			this.getContentMarkdown(),
 			this.getCategory(),
 			this.createdAt,
 			new Date()
@@ -52,7 +53,7 @@ class PostMarkdown {
 		return title ? title : '';
 	}
 
-	public getContent(): string {
+	public getContentMarkdown(): string {
 		return this.markdown.replace(`# ${this.getTitle()}`, '');
 	}
 

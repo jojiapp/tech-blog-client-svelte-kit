@@ -1,5 +1,5 @@
-import type { PageLoad } from '../../../../.svelte-kit/types/src/routes/admin/posts/$types';
-import PostItem from '../../../lib/posts/dto/post-item';
+import PostItem from '../../lib/posts/dto/post-item';
+import type { PageLoad } from '../../../.svelte-kit/types/src/routes/blog/$types';
 
 export type PostsPage = {
 	postItems: PostItem[];
@@ -19,8 +19,8 @@ export const load: PageLoad<PostsPage> = async () => {
 				new Date()
 			),
 			new PostItem(
-				'1',
-				'Chapter 10. 람다를 이용한 도메인 전용 언어',
+				'2',
+				'Chapter 11. 람다를 이용한 도메인 전용 언어',
 				'언어의 주요 목표는 메시지를 명확하고, 안정적인 방식으로 전달하는 것 입니다.',
 				'Modern Java In Action',
 				'https://jojiapp.github.io/static/images/logo.png',

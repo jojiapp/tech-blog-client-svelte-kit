@@ -3,7 +3,7 @@
 	import SubmitButton from '../../../../common/component/button/SimpleButton.svelte';
 	import { postMarkdown } from '../../../store/post-stores.js';
 
-	export let handlePreview;
+	export let handlePreviewToggle;
 
 	const handleCreatedAtOnChange = (date: string) => {
 		$postMarkdown.setCreatedAt(date);
@@ -20,6 +20,6 @@
 			value={$postMarkdown.getCreatedAt()}
 			on:change={(e) => handleCreatedAtOnChange(e.currentTarget.value)}
 		/>
-		<SubmitButton handleOnClick={handlePreview} text="미리보기" />
+		<SubmitButton handleOnClick={handlePreviewToggle} text="미리보기" />
 	</div>
 </div>

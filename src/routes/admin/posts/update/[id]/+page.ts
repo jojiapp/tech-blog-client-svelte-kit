@@ -1,6 +1,6 @@
 import type { PageLoad } from '../../../../../../.svelte-kit/types/src/routes/admin/posts/create/$types';
 import PostMarkdown from '$lib/posts/dto/post-markdown';
-import CategoryChoice from '../../../../../lib/category/dto/CategoryChoice';
+import CategoryChoice from '$lib/category/dto/CategoryChoice';
 import categoryAPI from '$lib/category/api/category-api';
 import { error } from '@sveltejs/kit';
 

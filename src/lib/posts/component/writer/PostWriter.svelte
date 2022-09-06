@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { postMarkdown, post } from '../../store/post-stores';
+	import { postMarkdown } from '../../store/post-stores';
 	import MarkdownEditor from '../../../markdown/MarkdownEditor.svelte';
 	import Post from '../detail/Post.svelte';
 	import SimpleButton from '../../../common/component/button/SimpleButton.svelte';
@@ -10,18 +10,13 @@
 	let isPreview = false;
 
 	const handlePreviewToggle = () => (isPreview = !isPreview);
-
-	const handlePreview = () => {
-		$post = $postMarkdown.toPostMarkdown();
-		handlePreviewToggle();
-	};
 </script>
 
 {#if !isPreview}
-	<PostMenubar {handlePreview} />
+	<PostMenubar {handlePreviewToggle} />
 	<MarkdownEditor />
 {:else}
-	<Post {handlePreview} />
+	<Post post={$postMarkdown.toPostMarkdown()} />
 	<div class="mt-16 flex justify-between">
 		<SimpleButton handleOnClick={handlePreviewToggle} text="뒤로가기" />
 		<SimpleButton handleOnClick={handleSubmit} text="저장" />
