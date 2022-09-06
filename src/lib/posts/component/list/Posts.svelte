@@ -1,21 +1,16 @@
 <script lang="ts">
-	import PostItem from '../../dto/post-item';
+	import PostItem from '$lib/posts/component/list/PostItem.svelte';
+	import PostPaginationDTO from '../../dto/postPaginationDTO';
+	import PostItemDTO from '../../dto/postItemDTO';
+	import PostPagination from '$lib/posts/component/list/PostPagination.svelte';
 
-	export let postItems: PostItem[];
+	export let postItems: PostItemDTO[];
+	export let postPagination: PostPaginationDTO;
 </script>
 
 <section>
 	{#each postItems as post}
-		<div class="flex border-t-2 border-gray-800 py-12">
-			<div class="mr-24 flex hidden w-48 items-center md:block">
-				<img src={post.getThumbnailUrl()} alt="thumbnail" class="rounded" />
-			</div>
-			<div class="flex flex-8 flex-col justify-between gap-4">
-				<h3 class="text-2xl font-bold">{post.getTitle()}</h3>
-				<div class="text-gray-400">{post.getSummary()}</div>
-				<div class="text-primary-500">{post.getCategory()}</div>
-				<div class="text-gray-400">{post.getCreatedAt()}</div>
-			</div>
-		</div>
+		<PostItem {post} />
 	{/each}
+	<PostPagination {postPagination} />
 </section>

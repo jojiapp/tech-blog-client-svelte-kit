@@ -1,13 +1,13 @@
-import type PostMarkdown from '../dto/post-markdown';
+import type PostMarkdownDTO from '../dto/postMarkdownDTO';
 
 class PostAPI {
-	createPost = async (postMarkdown: PostMarkdown) => {
+	createPost = async (postMarkdown: PostMarkdownDTO) => {
 		console.log('저장');
 		// todo: 게시글 등록
 		return '1';
 	};
 
-	updatePost = async (postMarkdown: PostMarkdown) => {
+	updatePost = async (postMarkdown: PostMarkdownDTO) => {
 		console.log('수정');
 		// todo 게시글 수정
 		return '1';

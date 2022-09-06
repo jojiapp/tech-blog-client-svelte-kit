@@ -1,6 +1,6 @@
 import DateFormatter from '../../common/formatter/DateFormatter';
 
-class Post {
+class PostDTO {
 	private readonly id: string;
 	private readonly title: string;
 	private readonly contentMarkdown: string;
@@ -53,4 +53,4 @@ class Post {
 	}
 }
 
-export default Post;
+export default PostDTO;

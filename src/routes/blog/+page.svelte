@@ -3,6 +3,7 @@
 
 	export let data;
 	let postItems = data.postItems;
+	let postPagination = data.postPagination;
 </script>
 
-<Posts {postItems} />
+<Posts {postItems} {postPagination} />

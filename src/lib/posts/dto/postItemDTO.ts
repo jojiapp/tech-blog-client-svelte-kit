@@ -1,6 +1,6 @@
 import DateFormatter from '../../common/formatter/DateFormatter';
 
-class PostItem {
+class PostItemDTO {
 	private readonly id: string;
 	private readonly title: string;
 	private readonly summary: string;
@@ -49,4 +49,4 @@ class PostItem {
 	}
 }
 
-export default PostItem;
+export default PostItemDTO;

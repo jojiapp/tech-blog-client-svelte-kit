@@ -1,11 +1,11 @@
 import type { PageLoad } from '../../../../../../.svelte-kit/types/src/routes/admin/posts/create/$types';
-import PostMarkdown from '$lib/posts/dto/post-markdown';
+import PostMarkdownDTO from '../../../../../lib/posts/dto/postMarkdownDTO';
 import CategoryChoice from '$lib/category/dto/CategoryChoice';
 import categoryAPI from '$lib/category/api/category-api';
 import { error } from '@sveltejs/kit';
 
 export type PostUpdatePage = {
-	postMarkdown: PostMarkdown;
+	postMarkdown: PostMarkdownDTO;
 	postCategory: CategoryChoice;
 };
 
@@ -18,7 +18,7 @@ export const load: PageLoad<PostUpdatePage> = async ({ params }) => {
 
 	// todo: 게시글 조회
 	return {
-		postMarkdown: PostMarkdown.from(params.id!, '# 제목', categories[0], new Date()),
+		postMarkdown: PostMarkdownDTO.from(params.id!, '# 제목', categories[0], new Date()),
 		postCategory: new CategoryChoice(categories)
 	};
 };

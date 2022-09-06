@@ -1,7 +1,7 @@
-import Post from './post';
+import PostDTO from './postDTO';
 import DateFormatter from '../../common/formatter/DateFormatter';
 
-class PostMarkdown {
+class PostMarkdownDTO {
 	private readonly id: string;
 	private markdown: string;
 	private category: string;
@@ -23,15 +23,15 @@ class PostMarkdown {
 	}
 
 	public static init(category: string) {
-		return new PostMarkdown('', '', category, new Date(), new Date());
+		return new PostMarkdownDTO('', '', category, new Date(), new Date());
 	}
 
 	public static from(id: string, markdown: string, category: string, createdAt: Date) {
-		return new PostMarkdown(id, markdown, category, createdAt, new Date());
+		return new PostMarkdownDTO(id, markdown, category, createdAt, new Date());
 	}
 
-	public toPostMarkdown(): Post {
-		return new Post(
+	public toPostMarkdown(): PostDTO {
+		return new PostDTO(
 			this.getId(),
 			this.getTitle(),
 			this.getContentMarkdown(),
@@ -61,7 +61,7 @@ class PostMarkdown {
 		return this.markdown;
 	}
 
-	public setMarkdown(markdown: string): PostMarkdown {
+	public setMarkdown(markdown: string): PostMarkdownDTO {
 		this.markdown = markdown;
 		return this;
 	}
@@ -70,7 +70,7 @@ class PostMarkdown {
 		return this.category;
 	}
 
-	public setCategory(category: string): PostMarkdown {
+	public setCategory(category: string): PostMarkdownDTO {
 		this.category = category;
 		return this;
 	}
@@ -79,7 +79,7 @@ class PostMarkdown {
 		return DateFormatter.getYYYY_MM_DD_HH_mm(this.createdAt);
 	}
 
-	public setCreatedAt(createdAt: string): PostMarkdown {
+	public setCreatedAt(createdAt: string): PostMarkdownDTO {
 		this.createdAt = DateFormatter.toYYYY_MM_DD_HH_mm(createdAt);
 		return this;
 	}
@@ -88,10 +88,10 @@ class PostMarkdown {
 		return DateFormatter.getYYYY_MM_DD_HH_mm(this.updatedAt);
 	}
 
-	public setUpdatedAt(updatedAt: Date): PostMarkdown {
+	public setUpdatedAt(updatedAt: Date): PostMarkdownDTO {
 		this.updatedAt = updatedAt;
 		return this;
 	}
 }
 
-export default PostMarkdown;
+export default PostMarkdownDTO;
