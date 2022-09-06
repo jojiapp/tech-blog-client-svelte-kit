@@ -1,5 +1,5 @@
 import type { PageLoad } from '../../../../.svelte-kit/types/src/routes/admin/posts/$types';
-import PostItem from '../../../lib/posts/model/post-item';
+import PostItem from '../../../lib/posts/dto/post-item';
 
 export type PostsPage = {
 	postItems: PostItem[];

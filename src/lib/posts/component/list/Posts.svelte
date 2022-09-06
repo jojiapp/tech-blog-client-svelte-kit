@@ -1,5 +1,5 @@
 <script lang="ts">
-	import PostItem from '../../model/post-item';
+	import PostItem from '../../dto/post-item';
 
 	export let postItems: PostItem[];
 </script>

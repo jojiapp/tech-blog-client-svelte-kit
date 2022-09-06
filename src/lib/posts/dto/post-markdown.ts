@@ -1,4 +1,4 @@
-import Post from '../model/post';
+import Post from './post';
 import DateFormatter from '../../common/formatter/DateFormatter';
 
 class PostMarkdown {
